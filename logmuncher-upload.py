@@ -2,6 +2,7 @@
 import requests
 import time
 import argparse
+import os
 __author__ = "Thomas Gubler"
 __license__ = "BSD"
 __email__ = "thomasgubler@gmail.com"
@@ -25,7 +26,7 @@ class Uploader():
             self.filenames = args.filenames
             payload = {
                 'email': self.email,
-                'title': f
+                'title': os.path.basename(f)
             }
             files = {'file': open(f, 'rb')}
             r = requests.post("http://dash.oznet.ch/upload",
