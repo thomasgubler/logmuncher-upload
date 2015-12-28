@@ -29,7 +29,7 @@ class Uploader():
                 'title': os.path.basename(f)
             }
             files = {'file': open(f, 'rb')}
-            r = requests.post("http://dash.oznet.ch/upload",
+            r = requests.post("http://logs.uaventure.com/upload",
                               data=payload, files=files)
 
             if r.status_code == requests.codes.ok:
